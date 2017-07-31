@@ -1,20 +1,22 @@
 #!/bin/sh
-PROJECT_NAME=$1
-COMPANY_NAME=$2
+COMPANY_NAME=$1
+PROJECT_NAME=$2
 
 if [ -z "$1" ]
   then
-    echo "No 1st argument PROJECT_NAME (t*)"
-    echo "Usage: $0 PROJECT_NAME COMPANY_NAME"
+    echo "No 1st argument COMPANY_NAME (s*)"
+    echo "Usage: $0 COMPANY_NAME PROJECT_NAME"
     exit 1
 fi
 
+
 if [ -z "$2" ]
   then
-    echo "No 2nd argument COMPANY_NAME (s*)"
-    echo "Usage: $0 PROJECT_NAME COMPANY_NAME"
+    echo "No 2nd argument PROJECT_NAME (t*)"
+    echo "Usage: $0 COMPANY_NAME PROJECT_NAME"
     exit 1
 fi
+
 
 echo "FUSE_HOME=$FUSE_HOME"
 echo "HOME=$HOME"
