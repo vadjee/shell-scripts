@@ -18,12 +18,12 @@ if [ -z "$2" ]
 fi
 
 
-echo "FUSE_HOME=$FUSE_HOME"
-echo "HOME=$HOME"
-
 if [ -z "$FUSE_HOME" ]; then
   export FUSE_HOME=$HOME/work/opt/fuse-6.1.0.redhat-379;
 fi
+
+echo "FUSE_HOME=$FUSE_HOME"
+echo "HOME=$HOME"
 
 sudo rm -rf $FUSE_HOME/data
 sudo rm -rf /home/$USER/work/opt/fuse-6.1.0.redhat-379/data
