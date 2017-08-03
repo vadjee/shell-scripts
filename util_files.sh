@@ -27,3 +27,5 @@ chmod +x fuse_start_debug.sh
 
 #chown recursive
 chown ${USER}:${USER} ${HOME}/work/opt/tomcat -R
+chown tomcat:tomcat ./resellerweb.war
+

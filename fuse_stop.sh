@@ -46,3 +46,9 @@ else #if needed #also: elif [new condition]
   echo "JBoss Fuse & Maven repo is cleaned"
 fi
 
+
+ps aux | grep fuse
+echo "TODO if need -->"
+echo "kill -9 <fuse_pid>"
+#kill -9 <pid>
+#$FUSE_HOME/bin/stop && echo 'JBoss Fuse has been successfully stopped'
