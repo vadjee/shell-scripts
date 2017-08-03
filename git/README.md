@@ -130,7 +130,7 @@ git push
 #delete branch if need
 ```
 
-squash commits of <task2>
+squash commits of task2
 -----
 ```sh
 git log
@@ -177,7 +177,7 @@ git cherry-pick aaa84e022469fdee887783f4f4c2de0afbbb
 git push origin <branchName>
 ```
 
-Rebase <branchName> to master
+Rebase hotfix branchName to master
 -----
 ```sh
 git checkout master
@@ -186,6 +186,27 @@ git status
 git pull --rebase origin <branchName_BasedOnMaster>
 git push origin master
 ```
+
+Rebase old branch to master
+-----
+```sh
+#1. Update old branch --> Reabase master to <branchName>. 
+git checkout <branchName>
+git pull --rebase origin <branchName>
+git status
+git pull --rebase origin master
+# double check if all ok. "git status; gitk; git log ..."
+git push origin <branchName>
+
+
+#2. Rebase updated branch to master
+git checkout master
+git pull --rebase origin master
+git status
+git pull --rebase origin <branchName>
+git push origin master
+```
+
 
 Several Remote
 -----
@@ -226,7 +247,7 @@ git push github HEAD:master
 #git push github Morocco_adapter
 ```
 
-Several Remote. Example of merging master from <companyName> repo into remote git repository
+Several Remote. Example of merging master from companyName repo into remote git repository
 -----
 ```sh
 git remote add a9 git@git.a9xxx...<remote git repository>.git
