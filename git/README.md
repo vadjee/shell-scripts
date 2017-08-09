@@ -140,24 +140,29 @@ git rebase -i HEAD~9
 #pick task2 comment1 --> change (pick) to (f) comment1 (squashed from down to up); 
 #pick task1 comment
 #(r) instead of (f) if need change comment
-#(s) delete not_needed commits - squash
+#(s) delete(squash) not_needed commits - squash
 #(f) слить в один
 #(e) change comment
+#(d) drop commit
 #squashed from down to up!
 git push origin <branchName> -f
 git log
+
+#fg
+#git rebase --abort
 ```
 
 Delete commit
 -----
 ```sh
 git log
-git reset --hard aaa84e022469fdee887783f4f4c2de0afbbb
-push origin branchName
-push origin --force
+git rebase -i HEAD~9
+#change (pick) to (d) drop commit
+git push origin <branchName> -f
+git log
 ```
 
-Delete commit2
+Delete commit. rebase to last_normal_commit
 -----
 ```sh
 git log
@@ -166,6 +171,16 @@ git rebase -i aaa84e022469fdee887783f4f4c2de0afbbb
 git log
 git push --force
 ```
+
+Delete all local changes in dev branch
+-----
+```sh
+#git checkout .
+git log
+git reset --hard aaa84e022469fdee887783f4f4c2de0afbbb
+git pull --rebase origin dev
+```
+
 
 HOTFIX in new branch based on master
 -----
