@@ -14,3 +14,10 @@ chown recursive
 chown ${USER}:${USER} ${HOME}/work/opt/tomcat -R
 ```
 
+chmod
+-----
+```sh
+sudo chmod 777 /var/run/docker.sock
+```
+
+
