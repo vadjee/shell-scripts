@@ -6,6 +6,7 @@ Fuse start/stop scripts
 ```sh
 ./fuse_start_debug.sh
 ./fuse_stop.sh $COMPANY_NAME $PROJECT_NAME
+ps aux | grep fuse
 ```
 
 Run dockers
