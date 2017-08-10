@@ -130,7 +130,7 @@ git push
 #delete branch if need
 ```
 
-squash commits of task2
+Squash commits of task2
 -----
 ```sh
 git log
@@ -210,10 +210,10 @@ git pull --rebase origin <branchName>
 git status
 git pull --rebase origin master
 # double check if all ok. "git status; gitk; git log ..."
-# squash (s,f) commits
 git log
+# "Squash commits" (s,f) 
+#git rebase -i HEAD~9
 #git rebase --abort
-#fg
 git push origin <branchName> -f
 
 
@@ -225,7 +225,6 @@ git status
 git pull --rebase origin <branchName>
 git push origin master
 ```
-
 
 Several Remote
 -----
