@@ -26,3 +26,11 @@ JBossFuse:karaf@root> list | grep $PROJECT_NAME
 JBossFuse:karaf@root> $PROJECT_NAME:bundles
 JBossFuse:karaf@root> $PROJECT_NAME:uninstall
 ```
+Fuse log
+-----
+```sh
+docker exec -it jboss-fuse bash
+lnav /opt/fuse/data/log/fuse.log
+#or
+lnav ~/work/opt/fuse-6.1.0.redhat-379/data/log/fuse.log
+```
