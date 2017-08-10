@@ -23,4 +23,6 @@ Fuse commands
 ```sh
 JBossFuse:karaf@root> $PROJECT_NAME:install
 JBossFuse:karaf@root> list | grep $PROJECT_NAME
+JBossFuse:karaf@root> $PROJECT_NAME:bundles
+JBossFuse:karaf@root> $PROJECT_NAME:uninstall
 ```
