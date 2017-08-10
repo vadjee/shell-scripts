@@ -135,16 +135,15 @@ squash commits of task2
 ```sh
 git log
 git rebase -i HEAD~9
-#pick task3 comment
-#pick task2 comment2
-#pick task2 comment1 --> change (pick) to (f) comment1 (squashed from down to up); 
 #pick task1 comment
-#(r) instead of (f) if need change comment
-#(s) delete(squash) not_needed commits - squash
-#(f) слить в один
-#(e) change comment
+#pick task2 comment1
+#f task2 comment2 --> change (pick) to (f) comment2 will be lost in history
+#s task2 comment3 --> change (pick) to (s) comment3 will be in history (squashed from down to up); 
+#pick task3 comment
+#(s) squash with stay comment in history
+#(f) squash without save this comment
 #(d) drop commit
-#squashed from down to up!
+#squashed from down to up! stay pick on first comment1
 git push origin <branchName> -f
 git log
 
@@ -211,11 +210,16 @@ git pull --rebase origin <branchName>
 git status
 git pull --rebase origin master
 # double check if all ok. "git status; gitk; git log ..."
-git push origin <branchName>
+# squash (s,f) commits
+git log
+#git rebase --abort
+#fg
+git push origin <branchName> -f
 
 
 #2. Rebase updated branch to master
 git checkout master
+git fetch
 git pull --rebase origin master
 git status
 git pull --rebase origin <branchName>
