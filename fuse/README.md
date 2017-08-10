@@ -21,6 +21,6 @@ docker run -it --rm --name jboss-fuse -p 13000:13000 -p 8080:8080 -p 8181:8181 -
 Fuse commands
 -----
 ```sh
-$PROJECT_NAME:install
-list | grep $PROJECT_NAME
+JBossFuse:karaf@root> $PROJECT_NAME:install
+JBossFuse:karaf@root> list | grep $PROJECT_NAME
 ```
