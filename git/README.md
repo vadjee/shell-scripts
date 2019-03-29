@@ -17,6 +17,7 @@ gitk --all -d
 git diff
 git status
 git log
+git log --oneline -5
 ```
 
 Commit changes
@@ -72,6 +73,7 @@ Create breanch
 -----
 ```sh
 git checkout -b newBreabnchNameFromCurrent
+git push --set-upstream origin newBreabnchNameFromCurrent 
 # add all changes
 git add .
 git push origin newBreabnchNameFromCurrent
@@ -128,6 +130,32 @@ git merge branchName --no-ff
 #git commit --amend
 git push
 #delete branch if need
+```
+
+
+Merge branchName to dev (IDEA)
+-----
+```sh
+-- 1.  update with dev -->
+git checkout branchName
+git rebase origin/dev
+--or--> git pull --rebase origin dev
+-- fix conflicts in IDEA
+git status
+-- if need -->
+git add .
+git rebase --continue
+-- or if wrong ...
+-- git rebase --abort 
+git push origin
+git push origin branchName
+-- or
+git push origin branchName --force-with-lease 
+-- 2. merge to dev
+git checkout dev
+git pull --rebase
+git pull --rebase origin branchName
+git push origin dev
 ```
 
 Squash commits of task2
